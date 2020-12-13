@@ -12,12 +12,18 @@ public class reflect : MonoBehaviour
     public Transform playerspawn;
     private bool slowed = false;
 
+    float maxCharge = 5f;
     private float charge = 5f;
     private float chargeUse = 1f;
     public EnergyBar energyBar;
+    public Energy energy;
 
     AudioSource source;
 
+    void Start()
+    {
+        energy.init();
+    }
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -31,7 +37,7 @@ public class reflect : MonoBehaviour
         rb.AddForce(velocity, ForceMode.VelocityChange);
         //rb.velocity = Vector3.back * speed;
 
-        charge = 5f;
+        charge = maxCharge;
 
         energyBar.SetMaxEnergy(charge);
 

@@ -5,17 +5,24 @@ using UnityEngine.UI;
 
 public class EnergyBar : MonoBehaviour
 {
+    public Energy energyObj;
     public Slider slider;
 
     public void SetMaxEnergy(float energy)
     {
-        slider.maxValue = energy;
-        slider.value = energy;
+        energyObj.maxEnergy = energy;
+        slider.maxValue = energyObj.maxEnergy;
+        slider.value = energyObj.charge;
     }
 
     public void SetEnergy(float energy)
     {
-        slider.value = energy;
+        energyObj.charge = energy;
+        slider.value = energyObj.charge;
     }
 
+    public void updateSlider()
+    {
+        slider.value = energyObj.charge;
+    }
 }
