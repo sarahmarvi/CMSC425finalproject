@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class LevelControl : MonoBehaviour
 {
-    public string levelName;
 
-    void onTriggerEnter(Collider item)
+    public int buildIndex;
+
+    void OnTriggerEnter(Collider item)
     {
-        if (item.gameObject.name == "Projectile")
+        if (item.CompareTag("Projectile"))
         {
-            SceneManager.LoadScene(levelName);
+            SceneManager.LoadScene(buildIndex);
 
 
             //Resets Scene from begining
