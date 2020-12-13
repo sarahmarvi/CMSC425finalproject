@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Moving : MonoBehaviour
 {
+<<<<<<< HEAD
     public float movementSensitivity = 0.3f;
     public float rotationSpeed = 10f;
+=======
+    public float sensitivity = 0.3f;
+>>>>>>> 2882060fbf37d4ec17c0a2edaa9ba0f280da5bd4
     public float speed = 5;
     //Rigidbody rb;
     Vector3 initialPos;
@@ -25,7 +29,10 @@ public class Moving : MonoBehaviour
         initialQuaternion = transform.rotation;
         Cursor.lockState = CursorLockMode.Locked;
 
+<<<<<<< HEAD
         source = projectile.GetComponent<AudioSource>();
+=======
+>>>>>>> 2882060fbf37d4ec17c0a2edaa9ba0f280da5bd4
     }
 
     private void Update()
@@ -36,6 +43,7 @@ public class Moving : MonoBehaviour
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
 #else
+<<<<<<< HEAD
             Application.Quit();
 #endif
         }
@@ -44,6 +52,18 @@ public class Moving : MonoBehaviour
         /*
         float input = Input.GetAxis("Mouse Y");
         float rot = transform.localEulerAngles.x + (-speed * Time.deltaTime * input);
+=======
+        Application.Quit();
+#endif
+        }
+
+        transform.Rotate(0, speed * Time.deltaTime * Input.GetAxis("Mouse X"), 0, Space.World);
+        /*
+        float input = Input.GetAxis("Mouse Y");
+
+        float rot = transform.localEulerAngles.x + (-speed * Time.deltaTime * input);
+
+>>>>>>> 2882060fbf37d4ec17c0a2edaa9ba0f280da5bd4
         if (rot > 45 && rot < 315 && input != 0)
         {
             if (input < 0)
@@ -54,7 +74,13 @@ public class Moving : MonoBehaviour
             {
                 rot = 315;
             }
+<<<<<<< HEAD
         }
+=======
+
+        }
+
+>>>>>>> 2882060fbf37d4ec17c0a2edaa9ba0f280da5bd4
         Debug.Log(rot);
         transform.localEulerAngles = new Vector3(rot, transform.localEulerAngles.y, transform.localEulerAngles.z);
         */
