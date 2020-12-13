@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Moving : MonoBehaviour
 {
-    public float movementSensitivity = 0.03f;
-    public float rotationSpeed = 10f;
-    public float speed = 5;
+    public float movementSensitivity = 0.3f;
+    public float rotationSpeed = 500f;
+    public float speed = 10f;
     //Rigidbody rb;
     Vector3 initialPos;
     Quaternion initialQuaternion;
