@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Moving : MonoBehaviour
 {
-    public float movementSensitivity = 0.3f;
-    public float rotationSpeed = 500f;
-    public float speed = 10f;
+    public float movementSensitivity = 0.15f;
+    public float rotationSpeed = 200f;
+    public float speed = 3f;
     //Rigidbody rb;
     Vector3 initialPos;
     Quaternion initialQuaternion;
@@ -16,6 +17,11 @@ public class Moving : MonoBehaviour
     public GameObject projectile;
 
     AudioSource source;
+
+    public EnergyBar energyBar;
+    public Energy energy;
+
+    public GameObject[] batteries;
 
     // Start is called before the first frame update
     void Start()
@@ -76,8 +82,22 @@ public class Moving : MonoBehaviour
 
         if (Input.GetKey(KeyCode.R))
         {
-            transform.rotation = initialQuaternion;
-            transform.position = initialPos;
+            /* transform.rotation = initialQuaternion;
+             transform.position = initialPos;
+             projectile.SetActive(false);
+
+             energy.init();
+             energyBar.SetMaxEnergy(energy.charge);
+             energyBar.SetEnergy(energy.charge);
+
+             for (int i = 0; i < batteries.Length; i++)
+             {
+                 batteries[i].SetActive(true);
+             }*/
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+
             //rb.velocity = Vector3.zero;
         }
         // Update is called once per frame
@@ -110,11 +130,22 @@ public class Moving : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("ReflectWall"))
         {
-            transform.position = playerspawn.position;
+            /*transform.position = playerspawn.position;
 
             source.Stop();
 
-            projectile.gameObject.SetActive(false);
+            energy.init();
+            energyBar.SetMaxEnergy(energy.charge);
+            energyBar.SetEnergy(energy.charge);
+
+            for (int i = 0; i < batteries.Length; i++)
+            {
+                batteries[i].SetActive(true);
+            }
+
+            projectile.gameObject.SetActive(false);*/
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 

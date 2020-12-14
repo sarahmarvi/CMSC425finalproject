@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class reflect : MonoBehaviour
 {
@@ -13,17 +14,19 @@ public class reflect : MonoBehaviour
     private bool slowed = false;
 
     float maxCharge = 5f;
-    private float charge = 5f;
+ /*   private float charge = 5f;*/
     private float chargeUse = 1f;
     public EnergyBar energyBar;
     public Energy energy;
 
+    public GameObject[] batteries;
+
     AudioSource source;
 
-    void Start()
+/*    void Start()
     {
         energy.init();
-    }
+    }*/
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -37,9 +40,10 @@ public class reflect : MonoBehaviour
         rb.AddForce(velocity, ForceMode.VelocityChange);
         //rb.velocity = Vector3.back * speed;
 
-        charge = maxCharge;
+        energy.init();
+        /*charge = maxCharge;*/
 
-        energyBar.SetMaxEnergy(charge);
+        energyBar.SetMaxEnergy(energy.charge);
 
         source = GetComponent<AudioSource>();
 
@@ -52,6 +56,7 @@ public class reflect : MonoBehaviour
             //ReflectProjectile(rb, collision.contacts[0].normal);
             velocity = Vector3.Reflect(velocity, collision.contacts[0].normal);
             rb.velocity = velocity;
+
         }
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -61,11 +66,20 @@ public class reflect : MonoBehaviour
             //velocity = Vector3.back * speed;
             //rb.AddForce(velocity, ForceMode.VelocityChange);
             //rb.velocity = velocity;
-            player.transform.position = playerspawn.position;
+            /*     player.transform.position = playerspawn.position;
 
-            source.Stop();
+                 source.Stop();
+                 energy.init();
+                 energyBar.SetMaxEnergy(energy.charge);
+                 energyBar.SetEnergy(energy.charge);
 
-            this.gameObject.SetActive(false);
+                 for (int i = 0; i < batteries.Length; i++)
+                 {
+                     batteries[i].SetActive(true);
+                 }
+
+                 this.gameObject.SetActive(false);*/
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         
     }
@@ -84,7 +98,7 @@ public class reflect : MonoBehaviour
 
         if (slowed == false)
         {
-            if (charge > 0)
+            if (energy.charge > 0)
             {
                 if (Input.GetKeyDown("space"))
                 {
@@ -102,7 +116,7 @@ public class reflect : MonoBehaviour
         }
         else if(slowed == true)
         {
-            if (charge <= 0)
+            if (energy.charge <= 0)
             {
                 UnityEngine.Debug.Log("timrenromal");
                 velocity *= 5.0f;
@@ -112,8 +126,9 @@ public class reflect : MonoBehaviour
                 return;
             }
 
-            charge -= chargeUse * Time.deltaTime;
-            energyBar.SetEnergy(charge);
+            /* charge -= chargeUse * Time.deltaTime;*/
+            energy.charge -= chargeUse * Time.deltaTime;
+            energyBar.SetEnergy(energy.charge);
 
             if (Input.GetKeyDown("space"))
             {

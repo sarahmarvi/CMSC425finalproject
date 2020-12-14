@@ -296,6 +296,12 @@ PrefabInstance:
       propertyPath: energyBar
       value: 
       objectReference: {fileID: 2008633443}
+    - target: {fileID: 2665599177651120506, guid: 596cdd2412b2da4499587f4cddf965b6,
+        type: 3}
+      propertyPath: energy
+      value: 
+      objectReference: {fileID: 11400000, guid: fe426203d612b3e4987a16dad4f0201c,
+        type: 2}
     - target: {fileID: 2665599177651120507, guid: 596cdd2412b2da4499587f4cddf965b6,
         type: 3}
       propertyPath: m_Name
@@ -1065,6 +1071,17 @@ PrefabInstance:
       propertyPath: projectile
       value: 
       objectReference: {fileID: 323939725}
+    - target: {fileID: 4151963893649527013, guid: bff1e7c5b72eca646bd4e552dc80443e,
+        type: 3}
+      propertyPath: energyBar
+      value: 
+      objectReference: {fileID: 2008633443}
+    - target: {fileID: 4151963893649527013, guid: bff1e7c5b72eca646bd4e552dc80443e,
+        type: 3}
+      propertyPath: energy
+      value: 
+      objectReference: {fileID: 11400000, guid: fe426203d612b3e4987a16dad4f0201c,
+        type: 2}
     - target: {fileID: 4151963893649527022, guid: bff1e7c5b72eca646bd4e552dc80443e,
         type: 3}
       propertyPath: m_Name
@@ -1276,6 +1293,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3616699211245324188, guid: cc5fabfc661132b4d9019458c6f6d7c8,
+        type: 3}
+      propertyPath: energyObj
+      value: 
+      objectReference: {fileID: 11400000, guid: fe426203d612b3e4987a16dad4f0201c,
+        type: 2}
     - target: {fileID: 3799061217484471666, guid: cc5fabfc661132b4d9019458c6f6d7c8,
         type: 3}
       propertyPath: m_AnchorMin.x

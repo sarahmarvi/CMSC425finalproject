@@ -349,12 +349,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72da50ad24388eb47a63ad90d1c8848c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSensitivity: 0.3
-  rotationSpeed: 500
-  speed: 5
+  movementSensitivity: 0.15
+  rotationSpeed: 200
+  speed: 3
   ballspawn: {fileID: 0}
   playerspawn: {fileID: 0}
   projectile: {fileID: 0}
+  energyBar: {fileID: 0}
+  energy: {fileID: 0}
 --- !u!114 &854112122025549902
 MonoBehaviour:
   m_ObjectHideFlags: 0

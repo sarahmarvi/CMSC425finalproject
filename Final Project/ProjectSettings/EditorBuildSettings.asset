@@ -9,12 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial.unity
     guid: c28603cfb650c3e429f49e46c2c60324
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
-    guid: 88ec0684dfcbee948b84e21697d44dcf
-  - enabled: 1
-    path: Assets/Scenes/Level2.unity
+    path: Assets/Scenes/ButtonLevel.unity
     guid: c657d45d0aca11a448d759d9fdc7a881
   - enabled: 1
-    path: Assets/Scenes/Level3.unity
+    path: Assets/Scenes/EnergyLevel.unity
     guid: 313c3018fea70a34baef7da92dbefd9d
+  - enabled: 1
+    path: Assets/Scenes/StarLevel.unity
+    guid: 88ec0684dfcbee948b84e21697d44dcf
+  - enabled: 1
+    path: Assets/Scenes/TrappedForever.unity
+    guid: 3d63e0d6089df4ffc829cde715410ad5
   m_configObjects: {}

@@ -8,9 +8,10 @@ public class EnergyRestore : MonoBehaviour
     public Energy energy;
     public EnergyBar slider;
     private bool isTriggered = false;
-    void Start()
+    
+    void OnEnable()
     {
-        
+        isTriggered = false;
     }
 
     // Update is called once per frame
